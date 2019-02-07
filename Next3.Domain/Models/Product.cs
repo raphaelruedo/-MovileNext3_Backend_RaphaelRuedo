@@ -5,12 +5,11 @@ namespace Next3.Domain.Models
 {
     public class Product : Entity
     {
-        public Product(string name, string description, decimal price, Restaurant restaurant)
+        public Product(string name, string description, decimal price)
         {
             Name = name;
             Description = description;
             Price = price;
-            Restaurant = restaurant;
         }
 
         public Product() { }

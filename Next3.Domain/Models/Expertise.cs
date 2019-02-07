@@ -11,5 +11,7 @@ namespace Next3.Domain.Models
         public Expertise() { }
 
         public string Name { get; set; }
+
+        public Restaurant Restaurant;
     }
 }
