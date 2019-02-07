@@ -6,7 +6,7 @@ namespace Next3.Domain.Models
     {
         public Address(string street, int number, string complement,
                         string city, string district, string country,
-                        decimal longitude, decimal latitude, string zipCode)
+                        decimal longitude, decimal latitude, string zipCode, Restaurant restaurant)
         {
             Street = street;
             Number = number;
@@ -17,6 +17,7 @@ namespace Next3.Domain.Models
             Longitude = longitude;
             Latitude = latitude;
             ZipCode = zipCode;
+            Restaurant = restaurant;
         }
 
 
@@ -31,5 +32,7 @@ namespace Next3.Domain.Models
         public decimal Longitude { get; set; }
         public decimal Latitude { get; set; }
         public string ZipCode { get; set; }
+
+        public Restaurant Restaurant { get; set; }
     }
 }

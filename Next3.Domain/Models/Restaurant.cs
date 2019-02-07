@@ -22,8 +22,13 @@ namespace Next3.Domain.Models
         public string Name { get; set; }
         public string Description { get; set; }
         public bool IsActive { get; set; }
+
+        public Guid AddressId { get; set; }
         public Address Address { get; set; }
+
+        public Guid ExpertiseId { get; set; }
         public Expertise Expertise { get; set; }
+
         public List<Product> Products { get; set; }
     }
 }
