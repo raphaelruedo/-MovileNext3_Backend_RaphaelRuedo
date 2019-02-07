@@ -12,7 +12,7 @@ namespace Next3.Domain.Models
             Price = price;
         }
 
-        public Product() { }
+        protected Product() { }
 
         public string Name { get; set; }
         public string Description { get; set; }

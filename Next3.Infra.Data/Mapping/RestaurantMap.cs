@@ -20,11 +20,9 @@ namespace Next3.Infra.Data.Mapping
             builder.Property(r => r.IsActive)
                .IsRequired();
 
-            builder.HasOne(r => r.Address)
-                .WithOne();
-
             builder.HasOne(r => r.Expertise)
-                .WithOne();
+             .WithMany(e => e.Restaurants)
+             .HasForeignKey(r => r.ExpertiseId);
         }
     }
 }

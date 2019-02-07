@@ -19,7 +19,6 @@ namespace Next3.Domain.Models
         public string Description { get; set; }
         public bool IsActive { get; set; }
 
-        public Guid AddressId { get; set; }
         public Address Address { get; set; }
 
         public Guid ExpertiseId { get; set; }

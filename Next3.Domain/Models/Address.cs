@@ -1,4 +1,5 @@
 ﻿using Next3.Domain.Core.Models;
+using System;
 
 namespace Next3.Domain.Models
 {
@@ -20,7 +21,7 @@ namespace Next3.Domain.Models
         }
 
 
-        public Address() { }
+        protected Address() { }
 
         public string Street { get; set; }
         public int Number { get; set; }
@@ -31,6 +32,8 @@ namespace Next3.Domain.Models
         public decimal Longitude { get; set; }
         public decimal Latitude { get; set; }
         public string ZipCode { get; set; }
+
+        public Guid RestaurantId { get; set; }
 
         public Restaurant Restaurant { get; set; }
     }
