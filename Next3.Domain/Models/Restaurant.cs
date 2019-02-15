@@ -8,6 +8,7 @@ namespace Next3.Domain.Models
     {
         public Restaurant(Guid id, string name, string description, bool isActive, Guid expertiseId)
         {
+            Id = id;
             Name = name;
             Description = description;
             IsActive = isActive;

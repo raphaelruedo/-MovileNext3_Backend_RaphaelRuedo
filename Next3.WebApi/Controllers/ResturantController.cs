@@ -31,8 +31,7 @@ namespace Next3.WebApi.Controllers
         }
 
         [HttpGet]
-        [AllowAnonymous]
-        [Route("/{id:guid}")]
+        [Route("{id:guid}")]
         public IActionResult Get(Guid id)
         {
             var restaurantViewModel = _restaurantAppService.GetById(id);
@@ -69,6 +68,7 @@ namespace Next3.WebApi.Controllers
         }
 
         [HttpDelete]
+        [Route("{id:guid}")]
         public IActionResult Delete(Guid id)
         {
             _restaurantAppService.Remove(id);
