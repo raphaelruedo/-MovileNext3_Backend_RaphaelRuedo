@@ -34,7 +34,6 @@ namespace Next3.Domain.Models
         public string ZipCode { get; set; }
 
         public Guid RestaurantId { get; set; }
-
         public Restaurant Restaurant { get; set; }
     }
 }

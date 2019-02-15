@@ -13,23 +13,25 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Domain", "3 - Domain", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5 - Infra", "5 - Infra", "{57BAE95B-5CB5-4879-972C-0CDA7C492A5F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Next3.Application", "Next3.Application\Next3.Application.csproj", "{2AEB9CA0-D52C-4F0C-9A84-569B6275949E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Next3.Application", "Next3.Application\Next3.Application.csproj", "{2AEB9CA0-D52C-4F0C-9A84-569B6275949E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Next3.Domain", "Next3.Domain\Next3.Domain.csproj", "{10161FA5-9743-49C7-A32D-57FCE05EB7DA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Next3.Domain", "Next3.Domain\Next3.Domain.csproj", "{10161FA5-9743-49C7-A32D-57FCE05EB7DA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Next3.Domain.Core", "Next3.Domain.Core\Next3.Domain.Core.csproj", "{755FDF3E-BD27-4635-95C5-A0206427FD53}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Next3.Domain.Core", "Next3.Domain.Core\Next3.Domain.Core.csproj", "{755FDF3E-BD27-4635-95C5-A0206427FD53}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5.1 - Data", "5.1 - Data", "{CB68EE30-82DF-475A-845E-023F2C01380D}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5.2 - CrossCutting", "5.2 - CrossCutting", "{E5768E4B-D896-4566-A1EC-1486152F6AD7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Next3.Infra.Data", "Next3.Infra.Data\Next3.Infra.Data.csproj", "{50B56284-CD9C-41B5-8E76-F8C979C0F544}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Next3.Infra.Data", "Next3.Infra.Data\Next3.Infra.Data.csproj", "{50B56284-CD9C-41B5-8E76-F8C979C0F544}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Next3.Infra.CrossCutting.Bus", "Next3.Infra.CrossCutting.Bus\Next3.Infra.CrossCutting.Bus.csproj", "{7CB5798C-9289-41E1-B1BC-EF5575C33042}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Next3.Infra.CrossCutting.Bus", "Next3.Infra.CrossCutting.Bus\Next3.Infra.CrossCutting.Bus.csproj", "{7CB5798C-9289-41E1-B1BC-EF5575C33042}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Next3.Infra.CrossCutting.Identity", "Next3.Infra.CrossCutting.Identity\Next3.Infra.CrossCutting.Identity.csproj", "{511D1DFD-1DD3-43A9-A8B5-340D3BA85BAD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Next3.Infra.CrossCutting.Identity", "Next3.Infra.CrossCutting.Identity\Next3.Infra.CrossCutting.Identity.csproj", "{511D1DFD-1DD3-43A9-A8B5-340D3BA85BAD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Next3.Infra.CrossCutting.IoC", "Next3.Infra.CrossCutting.IoC\Next3.Infra.CrossCutting.IoC.csproj", "{4103E790-2DC2-4447-8788-8AF62E2AD66E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Next3.Infra.CrossCutting.IoC", "Next3.Infra.CrossCutting.IoC\Next3.Infra.CrossCutting.IoC.csproj", "{4103E790-2DC2-4447-8788-8AF62E2AD66E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Next3.WebApi", "Next3.WebApi\Next3.WebApi.csproj", "{411F1596-A4A9-43F9-8970-370AC733A051}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -65,6 +67,10 @@ Global
 		{4103E790-2DC2-4447-8788-8AF62E2AD66E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4103E790-2DC2-4447-8788-8AF62E2AD66E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4103E790-2DC2-4447-8788-8AF62E2AD66E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{411F1596-A4A9-43F9-8970-370AC733A051}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{411F1596-A4A9-43F9-8970-370AC733A051}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{411F1596-A4A9-43F9-8970-370AC733A051}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{411F1596-A4A9-43F9-8970-370AC733A051}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -79,6 +85,7 @@ Global
 		{7CB5798C-9289-41E1-B1BC-EF5575C33042} = {E5768E4B-D896-4566-A1EC-1486152F6AD7}
 		{511D1DFD-1DD3-43A9-A8B5-340D3BA85BAD} = {E5768E4B-D896-4566-A1EC-1486152F6AD7}
 		{4103E790-2DC2-4447-8788-8AF62E2AD66E} = {E5768E4B-D896-4566-A1EC-1486152F6AD7}
+		{411F1596-A4A9-43F9-8970-370AC733A051} = {4779D24B-00F1-4EB4-97F2-1DD452963E5D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5CF2C75A-E17E-4BE4-85E6-24694210E985}

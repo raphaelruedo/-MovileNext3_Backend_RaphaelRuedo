@@ -6,11 +6,12 @@ namespace Next3.Domain.Models
 {
     public class Restaurant : Entity
     {
-        public Restaurant(Guid id, string name, string description, bool isActive)
+        public Restaurant(Guid id, string name, string description, bool isActive, Guid expertiseId)
         {
             Name = name;
             Description = description;
             IsActive = isActive;
+            ExpertiseId = expertiseId;
         }
 
         protected Restaurant() { }
