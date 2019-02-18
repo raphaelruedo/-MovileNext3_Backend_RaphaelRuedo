@@ -1,5 +1,6 @@
 ﻿using Next3.Domain.Core.Models;
 using System;
+using System.Collections.Generic;
 
 namespace Next3.Domain.Models
 {
@@ -26,5 +27,7 @@ namespace Next3.Domain.Models
 
         public Guid CategoryId { get; set; }
         public Category Category { get; set; }
+
+        public List<OrderItem> OrderItems { get; set; }
     }
 }

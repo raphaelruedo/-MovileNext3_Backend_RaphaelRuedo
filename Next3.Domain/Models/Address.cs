@@ -38,5 +38,8 @@ namespace Next3.Domain.Models
 
         [JsonIgnore]
         public List<Restaurant> Restaurants { get; set; }
+
+        [JsonIgnore]
+        public List<Order> Orders { get; set; }
     }
 }
