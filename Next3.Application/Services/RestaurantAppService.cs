@@ -10,6 +10,7 @@ using Next3.Infra.Data.Repository.EventSourcing;
 using System;
 using System.Collections.Generic;
 
+
 namespace Next3.Application.Services
 {
     public class RestaurantAppService : IRestaurantAppService

@@ -35,11 +35,13 @@ namespace Next3.Infra.CrossCutting.IoC
 
             services.AddScoped<IRestaurantAppService, RestaurantAppService>();
 
+
             services.AddScoped<INotificationHandler<DomainNotification>, DomainNotificationHandler>();
             services.AddScoped<INotificationHandler<RestaurantRegisteredEvent>, RestaurantEventHandler>();
             services.AddScoped<INotificationHandler<RestaurantUpdatedEvent>, RestaurantEventHandler>();
             services.AddScoped<INotificationHandler<RestaurantRemovedEvent>, RestaurantEventHandler>();
 
+            
             services.AddScoped<IRequestHandler<RegisterNewRestaurantCommand, Unit>, RestaurantCommandHandler>();
             services.AddScoped<IRequestHandler<UpdateRestaurantCommand, Unit>, RestaurantCommandHandler>();
             services.AddScoped<IRequestHandler<RemoveRestaurantCommand, Unit>, RestaurantCommandHandler>();

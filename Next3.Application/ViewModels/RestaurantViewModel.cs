@@ -12,6 +12,6 @@ namespace Next3.Application.ViewModels
         public string Description { get; set; }
         public bool IsActive { get; set; }
         public Guid ExpertiseId { get; set; }
-        public Guid AddressId { get; set; }
+        public AddressViewModel Address { get; set; }
     }
 }

@@ -9,6 +9,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using MyProject.Infra.CrossCutting.Identity.Models;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
 using Next3.Infra.CrossCutting.Identity.Authorization;
 using Next3.Infra.CrossCutting.Identity.Data;
 using Next3.Infra.CrossCutting.IoC;
@@ -34,7 +36,7 @@ namespace Next3.WebApi
 
             Configuration = builder.Build();
         }
-        
+
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
@@ -67,8 +69,14 @@ namespace Next3.WebApi
 
             services.AddMediatR(typeof(Startup));
 
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
-        
+            services.AddMvc()
+                .SetCompatibilityVersion(CompatibilityVersion.Version_2_2)
+                .AddJsonOptions(options =>
+                {
+                    options.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
+                    options.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
+                });
+
             RegisterServices(services);
         }
 
@@ -78,7 +86,7 @@ namespace Next3.WebApi
                                ILoggerFactory loggerFactory,
                                IHttpContextAccessor accessor)
         {
-      
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();

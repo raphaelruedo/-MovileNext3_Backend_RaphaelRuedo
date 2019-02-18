@@ -1,4 +1,5 @@
-﻿using Next3.Domain.Core.Models;
+﻿using Newtonsoft.Json;
+using Next3.Domain.Core.Models;
 using System;
 using System.Collections.Generic;
 
@@ -6,10 +7,11 @@ namespace Next3.Domain.Models
 {
     public class Address : Entity
     {
-        public Address(string street, int number, string complement,
+        public Address(Guid id, string street, int number, string complement,
                         string city, string district, string country,
                         double longitude, double latitude, string zipCode)
         {
+            Id = id;
             Street = street;
             Number = number;
             Complement = complement;
@@ -33,7 +35,8 @@ namespace Next3.Domain.Models
         public double Longitude { get; set; }
         public double Latitude { get; set; }
         public string ZipCode { get; set; }
-        
+
+        [JsonIgnore]
         public List<Restaurant> Restaurants { get; set; }
     }
 }

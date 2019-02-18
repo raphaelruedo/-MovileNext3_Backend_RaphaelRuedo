@@ -1,4 +1,5 @@
 ﻿using Next3.Domain.Core.Commands;
+using Next3.Domain.Models;
 using System;
 
 namespace Next3.Domain.Commands
@@ -15,7 +16,7 @@ namespace Next3.Domain.Commands
 
         public Guid ExpertiseId { get; set; }
 
-        public Guid AddressId { get; set; }
+        public Address Address { get; set; }
 
     }
 }

@@ -1,17 +1,19 @@
-﻿using Next3.Domain.Validations;
+﻿using Next3.Domain.Models;
+using Next3.Domain.Validations;
 using System;
 
 namespace Next3.Domain.Commands
 {
     public class RegisterNewRestaurantCommand : RestaurantCommand
     {
-        public RegisterNewRestaurantCommand(string name, string description, bool isActive, Guid expertiseId, Guid addressId)
+        public RegisterNewRestaurantCommand(string name, string description, bool isActive, Guid expertiseId,
+            Address address)
         {
             Name = name;
             Description = description;
             IsActive = isActive;
             ExpertiseId = expertiseId;
-            AddressId = addressId;
+            Address = address;
 
         }
 
@@ -21,4 +23,5 @@ namespace Next3.Domain.Commands
             return ValidationResult.IsValid;
         }
     }
+
 }

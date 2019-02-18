@@ -1,11 +1,13 @@
 ﻿using Next3.Domain.Core.Events;
+using Next3.Domain.Models;
 using System;
 
 namespace Next3.Domain.Events
 {
     public class RestaurantRegisteredEvent : Event
     {
-        public RestaurantRegisteredEvent(Guid id, string name, string description, bool isActive, Guid expertiseId, Guid addressId)
+        public RestaurantRegisteredEvent(Guid id, string name, string description, bool isActive, Guid expertiseId,
+            Address address)
         {
             Id = id;
             Name = name;
@@ -13,7 +15,7 @@ namespace Next3.Domain.Events
             IsActive = isActive;
             AggregateId = id;
             ExpertiseId = expertiseId;
-            AddressId = addressId;
+            Address = address;
         }
         public Guid Id { get; set; }
 
@@ -23,8 +25,8 @@ namespace Next3.Domain.Events
 
         public bool IsActive { get; private set; }
 
-        public Guid ExpertiseId { get; set; }
+        public Guid ExpertiseId { get; private set; }
 
-        public Guid AddressId { get; set; }
+        public Address Address { get; private set; }
     }
 }

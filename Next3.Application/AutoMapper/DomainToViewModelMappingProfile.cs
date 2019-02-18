@@ -9,6 +9,7 @@ namespace Next3.Application.AutoMapper
         public DomainToViewModelMappingProfile()
         {
             CreateMap<Restaurant, RestaurantViewModel>();
+            CreateMap<Address, AddressViewModel>();
         }
     }
 }

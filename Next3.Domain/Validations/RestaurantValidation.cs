@@ -30,5 +30,10 @@ namespace Next3.Domain.Validations
         {
             RuleFor(r => r.ExpertiseId).NotEqual(Guid.Empty).WithMessage("Especilidade não pode ser nula");
         }
+
+        protected void ValidateAddress()
+        {
+            RuleFor(r => r.Address).NotEmpty().WithMessage("Endereço obrigatório");
+        }
     }
 }

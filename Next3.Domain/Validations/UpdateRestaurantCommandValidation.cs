@@ -10,6 +10,7 @@ namespace Next3.Domain.Validations
             ValidateName();
             ValidateDescription();
             ValidateExpertise();
+            ValidateAddress();
         }
     }
 }

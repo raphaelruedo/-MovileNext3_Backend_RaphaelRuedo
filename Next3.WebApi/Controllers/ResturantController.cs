@@ -50,7 +50,7 @@ namespace Next3.WebApi.Controllers
                 NotifyModelStateErrors();
                 return Response(restaurantViewModel);
             }
-
+            
             _restaurantAppService.Register(restaurantViewModel);
 
             return Response(restaurantViewModel);

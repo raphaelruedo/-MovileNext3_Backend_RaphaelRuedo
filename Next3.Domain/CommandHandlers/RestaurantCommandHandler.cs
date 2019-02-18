@@ -36,11 +36,11 @@ namespace Next3.Domain.CommandHandlers
                 return Unit.Task;
             }
 
-            var restaurant = new Restaurant(Guid.NewGuid(), message.Name, message.Description, message.IsActive, message.ExpertiseId, message.AddressId);
+            var restaurant = new Restaurant(Guid.NewGuid(), message.Name, message.Description, message.IsActive, message.ExpertiseId, message.Address);
 
-            if (_restaurantRepository.GetByName(restaurant.Name) != null)
+            if (_restaurantRepository.GetByAddress(restaurant.Address.Street, restaurant.Address.Number) != null)
             {
-                Bus.RaiseEvent(new DomainNotification(message.MessageType, "Já existe um restaurant com este nome."));
+                Bus.RaiseEvent(new DomainNotification(message.MessageType, "Já existe um restaurant com este endereço."));
                 return Unit.Task;
             }
 
@@ -48,7 +48,7 @@ namespace Next3.Domain.CommandHandlers
 
             if (Commit())
             {
-                Bus.RaiseEvent(new RestaurantRegisteredEvent(restaurant.Id, restaurant.Name, restaurant.Description, restaurant.IsActive, restaurant.ExpertiseId, message.AddressId));
+                Bus.RaiseEvent(new RestaurantRegisteredEvent(restaurant.Id, restaurant.Name, restaurant.Description, restaurant.IsActive, restaurant.ExpertiseId, message.Address));
             }
 
             return Unit.Task;
@@ -62,8 +62,8 @@ namespace Next3.Domain.CommandHandlers
                 return Unit.Task;
             }
 
-            var restaurant = new Restaurant(message.Id, message.Name, message.Description, message.IsActive, message.ExpertiseId, message.AddressId);
-            var existingRestaurant = _restaurantRepository.GetByName(restaurant.Name);
+            var restaurant = new Restaurant(message.Id, message.Name, message.Description, message.IsActive, message.ExpertiseId, message.Address);
+            var existingRestaurant = _restaurantRepository.GetByAddress(restaurant.Address.Street, restaurant.Address.Number);
 
             if (existingRestaurant != null && existingRestaurant.Id != restaurant.Id)
             {

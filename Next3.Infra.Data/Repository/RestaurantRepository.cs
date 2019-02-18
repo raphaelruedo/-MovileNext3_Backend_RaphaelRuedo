@@ -18,5 +18,10 @@ namespace Next3.Infra.Data.Repository
         {
             return DbSet.AsNoTracking().FirstOrDefault(c => c.Name == name);
         }
+
+        public Restaurant GetByAddress(string street, int number)
+        {
+            return DbSet.AsNoTracking().FirstOrDefault(r => r.Address.Street == street && r.Address.Number == number);
+        }
     }
 }

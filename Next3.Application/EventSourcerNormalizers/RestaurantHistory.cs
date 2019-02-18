@@ -55,7 +55,7 @@ namespace Next3.Application.EventSourcerNormalizers
 
                 switch (e.MessageType)
                 {
-                    case "ProductRegisteredEvent":
+                    case "RestaurantRegisteredEvent":
                         values = JsonConvert.DeserializeObject<dynamic>(e.Data);
                         slot.IsActive = values["IsActive"];
                         slot.Description = values["Description"];
@@ -63,8 +63,9 @@ namespace Next3.Application.EventSourcerNormalizers
                         slot.Action = "Registered";
                         slot.When = values["Timestamp"];
                         slot.Id = values["Id"];
+                        slot.Who = e.User;
                         break;
-                    case "ProductUpdatedEvent":
+                    case "RestaurantUpdatedEvent":
                         values = JsonConvert.DeserializeObject<dynamic>(e.Data);
                         slot.IsActive = values["IsActive"];
                         slot.Description = values["Description"];
@@ -72,12 +73,14 @@ namespace Next3.Application.EventSourcerNormalizers
                         slot.Action = "Updated";
                         slot.When = values["Timestamp"];
                         slot.Id = values["Id"];
+                        slot.Who = e.User;
                         break;
-                    case "ProductRemovedEvent":
+                    case "RestaurantRemovedEvent":
                         values = JsonConvert.DeserializeObject<dynamic>(e.Data);
                         slot.Action = "Removed";
                         slot.When = values["Timestamp"];
                         slot.Id = values["Id"];
+                        slot.Who = e.User;
                         break;
                 }
                 HistoryData.Add(slot);
