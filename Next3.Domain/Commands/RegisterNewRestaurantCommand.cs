@@ -5,12 +5,13 @@ namespace Next3.Domain.Commands
 {
     public class RegisterNewRestaurantCommand : RestaurantCommand
     {
-        public RegisterNewRestaurantCommand(string name, string description, bool isActive, Guid expertiseId)
+        public RegisterNewRestaurantCommand(string name, string description, bool isActive, Guid expertiseId, Guid addressId)
         {
             Name = name;
             Description = description;
             IsActive = isActive;
             ExpertiseId = expertiseId;
+            AddressId = addressId;
 
         }
 

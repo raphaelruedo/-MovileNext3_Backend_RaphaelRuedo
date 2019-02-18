@@ -9,6 +9,7 @@ using Next3.Domain.Core.Notifications;
 
 namespace Next3.WebApi.Controllers
 {
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class RestaurantController : ApiController
@@ -39,7 +40,9 @@ namespace Next3.WebApi.Controllers
             return Response(restaurantViewModel);
         }
 
+
         [HttpPost]
+        //[Authorize(Policy = "CanWriteRestaurantData")]
         public IActionResult Post([FromBody]RestaurantViewModel restaurantViewModel)
         {
             if (!ModelState.IsValid)

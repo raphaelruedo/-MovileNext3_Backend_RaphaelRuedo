@@ -14,5 +14,8 @@ namespace Next3.Domain.Commands
         public bool IsActive { get; protected set; }
 
         public Guid ExpertiseId { get; set; }
+
+        public Guid AddressId { get; set; }
+
     }
 }

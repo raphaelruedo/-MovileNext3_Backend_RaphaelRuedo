@@ -1,5 +1,6 @@
 ﻿using Next3.Domain.Core.Models;
 using System;
+using System.Collections.Generic;
 
 namespace Next3.Domain.Models
 {
@@ -7,7 +8,7 @@ namespace Next3.Domain.Models
     {
         public Address(string street, int number, string complement,
                         string city, string district, string country,
-                        decimal longitude, decimal latitude, string zipCode)
+                        double longitude, double latitude, string zipCode)
         {
             Street = street;
             Number = number;
@@ -29,11 +30,10 @@ namespace Next3.Domain.Models
         public string City { get; set; }
         public string District { get; set; }
         public string Country { get; set; }
-        public decimal Longitude { get; set; }
-        public decimal Latitude { get; set; }
+        public double Longitude { get; set; }
+        public double Latitude { get; set; }
         public string ZipCode { get; set; }
-
-        public Guid RestaurantId { get; set; }
-        public Restaurant Restaurant { get; set; }
+        
+        public List<Restaurant> Restaurants { get; set; }
     }
 }

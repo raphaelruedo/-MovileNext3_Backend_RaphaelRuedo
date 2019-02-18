@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Next3.Infra.Data.Context;
 
 namespace Next3.Infra.Data.Migrations
 {
     [DbContext(typeof(Next3Context))]
-    partial class Next3ContextModelSnapshot : ModelSnapshot
+    [Migration("20190218141547_CorrecaoChaves")]
+    partial class CorrecaoChaves
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -29,6 +31,7 @@ namespace Next3.Infra.Data.Migrations
                         .HasMaxLength(100);
 
                     b.Property<string>("Complement")
+                        .IsRequired()
                         .HasMaxLength(100);
 
                     b.Property<string>("Country")
@@ -39,9 +42,9 @@ namespace Next3.Infra.Data.Migrations
                         .IsRequired()
                         .HasMaxLength(100);
 
-                    b.Property<double>("Latitude");
+                    b.Property<decimal>("Latitude");
 
-                    b.Property<double>("Longitude");
+                    b.Property<decimal>("Longitude");
 
                     b.Property<int>("Number");
 

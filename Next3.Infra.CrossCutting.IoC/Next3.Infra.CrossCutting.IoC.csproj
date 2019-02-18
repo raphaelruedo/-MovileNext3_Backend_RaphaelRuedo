@@ -11,6 +11,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Next3.Application\Next3.Application.csproj" />
     <ProjectReference Include="..\Next3.Infra.CrossCutting.Bus\Next3.Infra.CrossCutting.Bus.csproj" />
+    <ProjectReference Include="..\Next3.Infra.CrossCutting.Identity\Next3.Infra.CrossCutting.Identity.csproj" />
   </ItemGroup>
 
   <ItemGroup>

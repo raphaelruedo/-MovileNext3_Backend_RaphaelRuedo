@@ -18,8 +18,7 @@ namespace Next3.Infra.Data.Mapping
                 .IsRequired();
 
             builder.Property(a => a.Complement)
-              .HasMaxLength(100)
-              .IsRequired();
+              .HasMaxLength(100);
 
             builder.Property(a => a.City)
               .HasMaxLength(100)
@@ -42,9 +41,6 @@ namespace Next3.Infra.Data.Mapping
             builder.Property(a => a.ZipCode)
            .HasMaxLength(15)
           .IsRequired();
-
-            builder.HasOne(a => a.Restaurant)
-             .WithOne(r => r.Address);
         }
     }
 }

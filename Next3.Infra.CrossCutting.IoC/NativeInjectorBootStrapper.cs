@@ -1,6 +1,9 @@
 ﻿using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
+using MyProject.Infra.CrossCutting.Identity.Models;
+using MyProject.Infra.CrossCutting.Identity.Services;
 using Next3.Application.Interfaces;
 using Next3.Application.Services;
 using Next3.Domain.CommandHandlers;
@@ -12,6 +15,8 @@ using Next3.Domain.EventHandlers;
 using Next3.Domain.Events;
 using Next3.Domain.Interfaces;
 using Next3.Infra.CrossCutting.Bus;
+using Next3.Infra.CrossCutting.Identity.Authorization;
+using Next3.Infra.CrossCutting.Identity.Services;
 using Next3.Infra.Data.Context;
 using Next3.Infra.Data.EventSourcing;
 using Next3.Infra.Data.Repository;
@@ -46,6 +51,12 @@ namespace Next3.Infra.CrossCutting.IoC
             services.AddScoped<IEventStoreRepository, EventStoreSQLRepository>();
             services.AddScoped<IEventStore, SqlEventStore>();
             services.AddScoped<EventStoreSQLContext>();
+
+            services.AddSingleton<IAuthorizationHandler, ClaimsRequirementHandler>();
+            services.AddTransient<IEmailSender, AuthEmailMessageSender>();
+            services.AddTransient<ISmsSender, AuthSMSMessageSender>();
+            services.AddScoped<IUser, AspNetUser>();
+
         }
     }
 }

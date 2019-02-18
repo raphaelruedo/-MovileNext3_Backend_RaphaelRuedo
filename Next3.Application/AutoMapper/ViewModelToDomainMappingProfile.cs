@@ -9,7 +9,7 @@ namespace Next3.Application.AutoMapper
         public ViewModelToDomainMappingProfile()
         {
             CreateMap<RestaurantViewModel, RegisterNewRestaurantCommand>()
-                .ConstructUsing(r => new RegisterNewRestaurantCommand(r.Name, r.Description, r.IsActive, r.ExpertiseId));
+                .ConstructUsing(r => new RegisterNewRestaurantCommand(r.Name, r.Description, r.IsActive, r.ExpertiseId, r.AddressId));
 
             CreateMap<RestaurantViewModel, UpdateRestaurantCommand>()
                 .ConstructUsing(r => new UpdateRestaurantCommand(r.Id, r.Name, r.Description, r.IsActive, r.ExpertiseId));

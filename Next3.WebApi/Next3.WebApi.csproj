@@ -19,6 +19,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Next3.Application\Next3.Application.csproj" />
+    <ProjectReference Include="..\Next3.Infra.CrossCutting.Identity\Next3.Infra.CrossCutting.Identity.csproj" />
     <ProjectReference Include="..\Next3.Infra.CrossCutting.IoC\Next3.Infra.CrossCutting.IoC.csproj" />
   </ItemGroup>
 

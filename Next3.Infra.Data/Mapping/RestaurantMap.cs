@@ -23,6 +23,10 @@ namespace Next3.Infra.Data.Mapping
             builder.HasOne(r => r.Expertise)
              .WithMany(e => e.Restaurants)
              .HasForeignKey(r => r.ExpertiseId);
+
+            builder.HasOne(r => r.Address)
+             .WithMany(e => e.Restaurants)
+             .HasForeignKey(r => r.AddressId);
         }
     }
 }

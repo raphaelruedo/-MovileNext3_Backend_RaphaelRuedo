@@ -2,11 +2,15 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using MyProject.Infra.CrossCutting.Identity.Models;
+using Next3.Infra.CrossCutting.Identity.Authorization;
+using Next3.Infra.CrossCutting.Identity.Data;
 using Next3.Infra.CrossCutting.IoC;
 using Next3.WebApi.Configurations;
 using Swashbuckle.AspNetCore.Swagger;
@@ -34,6 +38,13 @@ namespace Next3.WebApi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDbContext<ApplicationDbContext>(options =>
+               options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+
+            services.AddIdentity<ApplicationUser, IdentityRole>()
+                .AddEntityFrameworkStores<ApplicationDbContext>()
+                .AddDefaultTokenProviders();
+
             services.AddLogging(loggingBuilder =>
             {
                 loggingBuilder.AddConfiguration(Configuration.GetSection("Logging"));
@@ -42,6 +53,12 @@ namespace Next3.WebApi
             });
 
             services.AddAutoMapperSetup();
+
+            services.AddAuthorization(options =>
+            {
+                options.AddPolicy("CanWriteRestaurantData", policy => policy.Requirements.Add(new ClaimRequirement("Restaurants", "Write")));
+                options.AddPolicy("CanRemoveRestaurantData", policy => policy.Requirements.Add(new ClaimRequirement("Restaurants", "Remove")));
+            });
 
             services.AddSwaggerGen(c =>
             {
@@ -87,6 +104,7 @@ namespace Next3.WebApi
 
             app.UseStaticFiles();
             app.UseHttpsRedirection();
+            app.UseAuthentication();
             app.UseMvc();
         }
 

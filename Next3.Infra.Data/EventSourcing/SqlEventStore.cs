@@ -1,5 +1,6 @@
 ﻿using Newtonsoft.Json;
 using Next3.Domain.Core.Events;
+using Next3.Domain.Interfaces;
 using Next3.Infra.Data.Repository.EventSourcing;
 
 namespace Next3.Infra.Data.EventSourcing
@@ -7,10 +8,12 @@ namespace Next3.Infra.Data.EventSourcing
     public class SqlEventStore : IEventStore
     {
         private readonly IEventStoreRepository _eventStoreRepository;
+        private readonly IUser _user;
 
-        public SqlEventStore(IEventStoreRepository eventStoreRepository)
+        public SqlEventStore(IEventStoreRepository eventStoreRepository, IUser user)
         {
             _eventStoreRepository = eventStoreRepository;
+            _user = user;
         }
 
         public void Save<T>(T theEvent) where T : Event
@@ -19,7 +22,8 @@ namespace Next3.Infra.Data.EventSourcing
 
             var storedEvent = new StoredEvent(
                 theEvent,
-                serializedData);
+                serializedData,
+                 _user.Name);
 
             _eventStoreRepository.Store(storedEvent);
         }

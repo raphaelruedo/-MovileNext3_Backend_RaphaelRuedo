@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using MediatR;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Next3.Domain.Core.Bus;
 using Next3.Domain.Core.Notifications;
@@ -58,6 +59,14 @@ namespace Next3.WebApi.Controllers
         protected void NotifyError(string code, string message)
         {
             _mediator.RaiseEvent(new DomainNotification(code, message));
+        }
+
+        protected void AddIdentityErrors(IdentityResult result)
+        {
+            foreach (var error in result.Errors)
+            {
+                NotifyError(result.ToString(), error.Description);
+            }
         }
     }
 }

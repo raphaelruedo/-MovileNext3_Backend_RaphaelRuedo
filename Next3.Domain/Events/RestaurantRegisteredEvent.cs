@@ -5,7 +5,7 @@ namespace Next3.Domain.Events
 {
     public class RestaurantRegisteredEvent : Event
     {
-        public RestaurantRegisteredEvent(Guid id, string name, string description, bool isActive, Guid expertiseId)
+        public RestaurantRegisteredEvent(Guid id, string name, string description, bool isActive, Guid expertiseId, Guid addressId)
         {
             Id = id;
             Name = name;
@@ -13,6 +13,7 @@ namespace Next3.Domain.Events
             IsActive = isActive;
             AggregateId = id;
             ExpertiseId = expertiseId;
+            AddressId = addressId;
         }
         public Guid Id { get; set; }
 
@@ -23,5 +24,7 @@ namespace Next3.Domain.Events
         public bool IsActive { get; private set; }
 
         public Guid ExpertiseId { get; set; }
+
+        public Guid AddressId { get; set; }
     }
 }

@@ -36,7 +36,7 @@ namespace Next3.Domain.CommandHandlers
                 return Unit.Task;
             }
 
-            var restaurant = new Restaurant(Guid.NewGuid(), message.Name, message.Description, message.IsActive, message.ExpertiseId);
+            var restaurant = new Restaurant(Guid.NewGuid(), message.Name, message.Description, message.IsActive, message.ExpertiseId, message.AddressId);
 
             if (_restaurantRepository.GetByName(restaurant.Name) != null)
             {
@@ -48,7 +48,7 @@ namespace Next3.Domain.CommandHandlers
 
             if (Commit())
             {
-                Bus.RaiseEvent(new RestaurantRegisteredEvent(restaurant.Id, restaurant.Name, restaurant.Description, restaurant.IsActive, restaurant.ExpertiseId));
+                Bus.RaiseEvent(new RestaurantRegisteredEvent(restaurant.Id, restaurant.Name, restaurant.Description, restaurant.IsActive, restaurant.ExpertiseId, message.AddressId));
             }
 
             return Unit.Task;
@@ -62,7 +62,7 @@ namespace Next3.Domain.CommandHandlers
                 return Unit.Task;
             }
 
-            var restaurant = new Restaurant(message.Id, message.Name, message.Description, message.IsActive, message.ExpertiseId);
+            var restaurant = new Restaurant(message.Id, message.Name, message.Description, message.IsActive, message.ExpertiseId, message.AddressId);
             var existingRestaurant = _restaurantRepository.GetByName(restaurant.Name);
 
             if (existingRestaurant != null && existingRestaurant.Id != restaurant.Id)
