@@ -25,6 +25,10 @@ namespace Next3.Infra.Data.Mapping
                 .WithMany(b => b.Products)
                 .HasForeignKey(p => p.RestaurantId);
 
+            builder.HasOne(p => p.Category)
+                .WithMany(c => c.Products)
+                .HasForeignKey(p => p.CategoryId);
+
         }
     }
 }

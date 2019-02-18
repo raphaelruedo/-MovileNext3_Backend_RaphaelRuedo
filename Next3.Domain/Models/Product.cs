@@ -5,11 +5,14 @@ namespace Next3.Domain.Models
 {
     public class Product : Entity
     {
-        public Product(string name, string description, decimal price)
+        public Product(Guid id,string name, string description, decimal price, Guid restaurantId, Guid categoryId)
         {
+            Id = id;
             Name = name;
             Description = description;
             Price = price;
+            RestaurantId = restaurantId;
+            CategoryId = categoryId;
         }
 
         protected Product() { }
@@ -20,5 +23,8 @@ namespace Next3.Domain.Models
 
         public Guid RestaurantId { get; set; }
         public Restaurant Restaurant { get; set; }
+
+        public Guid CategoryId { get; set; }
+        public Category Category { get; set; }
     }
 }

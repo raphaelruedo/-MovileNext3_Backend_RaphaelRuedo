@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Next3.Infra.Data.Context;
 
 namespace Next3.Infra.Data.Migrations
 {
     [DbContext(typeof(Next3Context))]
-    partial class Next3ContextModelSnapshot : ModelSnapshot
+    [Migration("20190218191125_addCategory")]
+    partial class addCategory
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

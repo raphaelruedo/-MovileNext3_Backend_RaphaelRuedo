@@ -48,7 +48,7 @@ namespace Next3.Domain.CommandHandlers
 
             if (Commit())
             {
-                Bus.RaiseEvent(new RestaurantRegisteredEvent(restaurant.Id, restaurant.Name, restaurant.Description, restaurant.IsActive, restaurant.ExpertiseId, message.Address));
+                Bus.RaiseEvent(new RestaurantRegisteredEvent(restaurant.Id, restaurant.Name, restaurant.Description, restaurant.IsActive, restaurant.ExpertiseId, restaurant.Address));
             }
 
             return Unit.Task;
