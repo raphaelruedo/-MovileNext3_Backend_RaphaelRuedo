@@ -17,7 +17,8 @@ namespace Next3.Infra.Data.Mapping
 
             builder.HasOne(oi => oi.Product)
               .WithMany(p => p.OrderItems)
-              .HasForeignKey(oi => oi.ProductId);
+              .HasForeignKey(oi => oi.ProductId)
+              .OnDelete(DeleteBehavior.Restrict);
 
             builder.HasOne(oi => oi.Order)
               .WithMany(p => p.OrderItens)

@@ -2,6 +2,7 @@
 using Microsoft.Extensions.Configuration;
 using Next3.Infra.Data.Mapping;
 using System.IO;
+using System.Linq;
 
 namespace Next3.Infra.Data.Context
 {
@@ -13,6 +14,10 @@ namespace Next3.Infra.Data.Context
             modelBuilder.ApplyConfiguration(new ExpertiseMap());
             modelBuilder.ApplyConfiguration(new AddressMap());
             modelBuilder.ApplyConfiguration(new RestaurantMap());
+            modelBuilder.ApplyConfiguration(new CategoryMap());
+            modelBuilder.ApplyConfiguration(new OrderItemMap());
+            modelBuilder.ApplyConfiguration(new OrderMap());
+            modelBuilder.ApplyConfiguration(new OrderStatusMap());
 
             base.OnModelCreating(modelBuilder);
         }

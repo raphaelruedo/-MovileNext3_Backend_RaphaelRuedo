@@ -6,14 +6,14 @@ namespace Next3.Domain.Models
 {
     public class Order : Entity
     {
-        public Order(Guid id, Guid userId, Address address, List<OrderItem> items, string observation, OrderStatus orderStatus)
+        public Order(Guid id, Guid userId, Address address, List<OrderItem> items, string observation, Guid orderStatusId)
         {
             Id = id;
             UserId = userId;
             Address = address;
             OrderItens = items;
             Observation = observation;
-            OrderStatus = orderStatus;
+            OrderStatusId = orderStatusId;
         }
 
         protected Order() { }

@@ -10,8 +10,8 @@ using Next3.Infra.CrossCutting.Identity.Data;
 namespace Next3.Infra.CrossCutting.Identity.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20190218152912_addIdentity")]
-    partial class addIdentity
+    [Migration("20190219123404_identity")]
+    partial class identity
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

@@ -1,6 +1,7 @@
 ﻿using Next3.Domain.Core.Commands;
 using Next3.Domain.Models;
 using System;
+using System.Collections.Generic;
 
 namespace Next3.Domain.Commands
 {
@@ -14,9 +15,11 @@ namespace Next3.Domain.Commands
 
         public bool IsActive { get; protected set; }
 
-        public Guid ExpertiseId { get; set; }
+        public Guid ExpertiseId { get; protected set; }
 
-        public Address Address { get; set; }
+        public Address Address { get; protected set; }
+
+        public List<Product> Products { get; protected set; }
 
     }
 }

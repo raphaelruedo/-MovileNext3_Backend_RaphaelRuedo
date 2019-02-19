@@ -11,6 +11,10 @@ namespace Next3.Application.AutoMapper
             CreateMap<Restaurant, RestaurantViewModel>();
             CreateMap<Address, AddressViewModel>();
             CreateMap<Product, ProductViewModel>();
+            CreateMap<Order, OrderViewModel>();
+            CreateMap<OrderItem, OrderItemViewModel>();
+            CreateMap<OrderStatus, OrderStatusViewModel>();
+            CreateMap<Category, CategoryViewModel>();
         }
     }
 }

@@ -14,7 +14,6 @@ namespace Next3.Domain.Commands
             IsActive = isActive;
             ExpertiseId = expertiseId;
             Address = address;
-
         }
 
         public override bool IsValid()

@@ -21,5 +21,8 @@ namespace Next3.Application.ViewModels
 
         [JsonIgnore]
         public List<RestaurantViewModel> Restaurants { get; set; }
+
+        [JsonIgnore]
+        public List<OrderViewModel> Orders { get; set; }
     }
 }

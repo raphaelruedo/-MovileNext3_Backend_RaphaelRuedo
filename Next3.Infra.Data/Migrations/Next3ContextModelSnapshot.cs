@@ -63,7 +63,9 @@ namespace Next3.Infra.Data.Migrations
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("Name");
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(100);
 
                     b.HasKey("Id");
 
@@ -82,6 +84,65 @@ namespace Next3.Infra.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Expertise");
+                });
+
+            modelBuilder.Entity("Next3.Domain.Models.Order", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<Guid>("AddressId");
+
+                    b.Property<string>("Observation")
+                        .HasMaxLength(250);
+
+                    b.Property<Guid>("OrderStatusId");
+
+                    b.Property<Guid>("UserId");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AddressId");
+
+                    b.HasIndex("OrderStatusId");
+
+                    b.ToTable("Order");
+                });
+
+            modelBuilder.Entity("Next3.Domain.Models.OrderItem", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<decimal>("Discount");
+
+                    b.Property<Guid>("OrderId");
+
+                    b.Property<Guid>("ProductId");
+
+                    b.Property<int>("Unit");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("OrderId");
+
+                    b.HasIndex("ProductId");
+
+                    b.ToTable("OrderItem");
+                });
+
+            modelBuilder.Entity("Next3.Domain.Models.OrderStatus", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(100);
+
+                    b.HasKey("Id");
+
+                    b.ToTable("OrderStatus");
                 });
 
             modelBuilder.Entity("Next3.Domain.Models.Product", b =>
@@ -137,6 +198,32 @@ namespace Next3.Infra.Data.Migrations
                     b.HasIndex("ExpertiseId");
 
                     b.ToTable("Restaurant");
+                });
+
+            modelBuilder.Entity("Next3.Domain.Models.Order", b =>
+                {
+                    b.HasOne("Next3.Domain.Models.Address", "Address")
+                        .WithMany("Orders")
+                        .HasForeignKey("AddressId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("Next3.Domain.Models.OrderStatus", "OrderStatus")
+                        .WithMany("Orders")
+                        .HasForeignKey("OrderStatusId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("Next3.Domain.Models.OrderItem", b =>
+                {
+                    b.HasOne("Next3.Domain.Models.Order", "Order")
+                        .WithMany("OrderItens")
+                        .HasForeignKey("OrderId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("Next3.Domain.Models.Product", "Product")
+                        .WithMany("OrderItems")
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Restrict);
                 });
 
             modelBuilder.Entity("Next3.Domain.Models.Product", b =>

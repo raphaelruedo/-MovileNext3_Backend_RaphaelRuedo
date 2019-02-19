@@ -35,16 +35,21 @@ namespace Next3.Infra.CrossCutting.IoC
 
             services.AddScoped<IRestaurantAppService, RestaurantAppService>();
             services.AddScoped<IProductAppService, ProductAppService>();
+            services.AddScoped<IOrderAppService, OrderAppService>();
 
 
             services.AddScoped<INotificationHandler<DomainNotification>, DomainNotificationHandler>();
             services.AddScoped<INotificationHandler<RestaurantRegisteredEvent>, RestaurantEventHandler>();
             services.AddScoped<INotificationHandler<RestaurantUpdatedEvent>, RestaurantEventHandler>();
             services.AddScoped<INotificationHandler<RestaurantRemovedEvent>, RestaurantEventHandler>();
+
             services.AddScoped<INotificationHandler<ProductRegisteredEvent>, ProductEventHandler>();
             services.AddScoped<INotificationHandler<ProductUpdatedEvent>, ProductEventHandler>();
             services.AddScoped<INotificationHandler<ProductRemovedEvent>, ProductEventHandler>();
 
+            services.AddScoped<INotificationHandler<OrderRegisteredEvent>, OrderEventHandler>();
+            services.AddScoped<INotificationHandler<OrderUpdatedEvent>, OrderEventHandler>();
+            services.AddScoped<INotificationHandler<OrderRemovedEvent>, OrderEventHandler>();
 
             services.AddScoped<IRequestHandler<RegisterNewRestaurantCommand, Unit>, RestaurantCommandHandler>();
             services.AddScoped<IRequestHandler<UpdateRestaurantCommand, Unit>, RestaurantCommandHandler>();
@@ -54,8 +59,13 @@ namespace Next3.Infra.CrossCutting.IoC
             services.AddScoped<IRequestHandler<UpdateProductCommand, Unit>, ProductCommandHandler>();
             services.AddScoped<IRequestHandler<RemoveProductCommand, Unit>, ProductCommandHandler>();
 
+            services.AddScoped<IRequestHandler<RegisterNewOrderCommand, Unit>, OrderCommandHandler>();
+            services.AddScoped<IRequestHandler<UpdateOrderCommand, Unit>, OrderCommandHandler>();
+            services.AddScoped<IRequestHandler<RemoveOrderCommand, Unit>, OrderCommandHandler>();
+
             services.AddScoped<IRestaurantRepository, RestaurantRepository>();
             services.AddScoped<IProductRepository, ProductRepository>();
+            services.AddScoped<IOrderRepository, OrderRepository>();
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddScoped<Next3Context>();
 

@@ -1,8 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace Next3.Infra.Data.Migrations
+namespace Next3.Infra.Data.Migrations.EventStoreSQL
 {
-    public partial class addIdentity : Migration
+    public partial class eventSourcing : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

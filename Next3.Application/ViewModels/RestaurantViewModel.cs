@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace Next3.Application.ViewModels
@@ -13,5 +14,6 @@ namespace Next3.Application.ViewModels
         public bool IsActive { get; set; }
         public Guid ExpertiseId { get; set; }
         public AddressViewModel Address { get; set; }
+        public List<ProductViewModel> Products { get; set; }
     }
 }
