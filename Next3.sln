@@ -31,7 +31,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Next3.Infra.CrossCutting.Id
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Next3.Infra.CrossCutting.IoC", "Next3.Infra.CrossCutting.IoC\Next3.Infra.CrossCutting.IoC.csproj", "{4103E790-2DC2-4447-8788-8AF62E2AD66E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Next3.WebApi", "Next3.WebApi\Next3.WebApi.csproj", "{411F1596-A4A9-43F9-8970-370AC733A051}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Next3.WebApi", "Next3.WebApi\Next3.WebApi.csproj", "{411F1596-A4A9-43F9-8970-370AC733A051}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

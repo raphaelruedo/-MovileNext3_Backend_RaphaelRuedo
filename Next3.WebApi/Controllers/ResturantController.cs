@@ -42,7 +42,7 @@ namespace Next3.WebApi.Controllers
 
 
         [HttpPost]
-        //[Authorize(Policy = "CanWriteRestaurantData")]
+        [Authorize(Policy = "CanWriteRestaurantData")]
         public IActionResult Post([FromBody]RestaurantViewModel restaurantViewModel)
         {
             if (!ModelState.IsValid)

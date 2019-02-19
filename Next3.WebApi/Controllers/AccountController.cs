@@ -70,7 +70,7 @@ namespace Next3.WebApi.Controllers
 
             if (result.Succeeded)
             {
-                await _userManager.AddClaimAsync(user, new Claim("User", "Write"));
+                await _userManager.AddClaimAsync(user, new Claim("Restaurants", "Write"));
 
                 await _signInManager.SignInAsync(user, false);
                 _logger.LogInformation(3, "User created a new account with password.");
