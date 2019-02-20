@@ -13,5 +13,6 @@ namespace Next3.Application.Interfaces
         RestaurantViewModel GetById(Guid id);
         IEnumerable<RestaurantViewModel> GetAll();
         IList<RestaurantHistoryData> GetAllHistory(Guid id);
+        IEnumerable<RestaurantViewModel> GetClosest(double latitude, double longitude, double maxDistance);
     }
 }

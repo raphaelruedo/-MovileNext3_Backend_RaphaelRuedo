@@ -62,6 +62,11 @@ namespace Next3.Application.Services
             return RestaurantHistory.ToJavaScriptRestaurantHistory(_eventStoreRepository.All(id));
         }
 
+        public IEnumerable<RestaurantViewModel> GetClosest(double latitude, double longitude, double maxDistance)
+        {
+            return _restaurantRepository.GetClosest(latitude, longitude, maxDistance).ProjectTo<RestaurantViewModel>();
+        }
+
         public void Dispose()
         {
             GC.SuppressFinalize(this);

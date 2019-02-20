@@ -14,6 +14,8 @@ namespace MyProject.Infra.CrossCutting.Identity.Models
             _accessor = accessor;
         }
 
+        protected AspNetUser() { }
+
         public string Name => _accessor.HttpContext.User.Identity.Name;
 
         public bool IsAuthenticated()

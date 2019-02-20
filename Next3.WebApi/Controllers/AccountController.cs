@@ -64,7 +64,7 @@ namespace Next3.WebApi.Controllers
                 return Response(model);
             }
 
-            var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+            var user = new ApplicationUser { UserName = model.Email, Email = model.Email, Name = model.Name };
 
             var result = await _userManager.CreateAsync(user, model.Password);
 

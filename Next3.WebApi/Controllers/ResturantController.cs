@@ -40,6 +40,15 @@ namespace Next3.WebApi.Controllers
             return Response(restaurantViewModel);
         }
 
+        [HttpGet]
+        [Route("{latitude}/{longitude}/{maxDistance}")]
+        public IActionResult Get(double latitude, double longitude, double maxDistance)
+        {
+            var closestRestaurants = _restaurantAppService.GetClosest(latitude, longitude, maxDistance);
+
+            return Response(closestRestaurants);
+        }
+
 
         [HttpPost]
         [Authorize(Policy = "CanWriteRestaurantData")]
@@ -50,7 +59,7 @@ namespace Next3.WebApi.Controllers
                 NotifyModelStateErrors();
                 return Response(restaurantViewModel);
             }
-            
+
             _restaurantAppService.Register(restaurantViewModel);
 
             return Response(restaurantViewModel);

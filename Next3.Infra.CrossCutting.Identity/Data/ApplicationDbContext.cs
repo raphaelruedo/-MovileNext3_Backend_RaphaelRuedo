@@ -14,17 +14,17 @@ namespace Next3.Infra.CrossCutting.Identity.Data
         {
         }
 
-        //protected override void OnModelCreating(ModelBuilder modelBuilder)
-        //{
-        //    base.OnModelCreating(modelBuilder);
-        //    modelBuilder.Entity<AspNetUser>(entity => { entity.ToTable(name: "User"); });
-        //    modelBuilder.Entity<IdentityRole>(entity => { entity.ToTable(name: "Role"); });
-        //    modelBuilder.Entity<IdentityUserRole<string>>(entity => { entity.ToTable("UserRoles"); });
-        //    modelBuilder.Entity<IdentityUserClaim<string>>(entity => { entity.ToTable("UserClaims"); });
-        //    modelBuilder.Entity<IdentityUserLogin<string>>(entity => { entity.ToTable("UserLogins"); });
-        //    modelBuilder.Entity<IdentityUserToken<string>>(entity => { entity.ToTable("UserToken"); });
-        //    modelBuilder.Entity<IdentityRoleClaim<string>>(entity => { entity.ToTable("RoleClaim"); });
-        //}
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+            modelBuilder.Entity<ApplicationUser>(entity => { entity.ToTable(name: "User"); });
+            modelBuilder.Entity<IdentityRole>(entity => { entity.ToTable(name: "Role"); });
+            modelBuilder.Entity<IdentityUserRole<string>>(entity => { entity.ToTable("UserRoles"); });
+            modelBuilder.Entity<IdentityUserClaim<string>>(entity => { entity.ToTable("UserClaims"); });
+            modelBuilder.Entity<IdentityUserLogin<string>>(entity => { entity.ToTable("UserLogins"); });
+            modelBuilder.Entity<IdentityUserToken<string>>(entity => { entity.ToTable("UserToken"); });
+            modelBuilder.Entity<IdentityRoleClaim<string>>(entity => { entity.ToTable("RoleClaim"); });
+        }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
