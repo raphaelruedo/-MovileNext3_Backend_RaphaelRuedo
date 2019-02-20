@@ -5,11 +5,12 @@ using Next3.Application.Interfaces;
 using Next3.Application.ViewModels;
 using Next3.Domain.Commands;
 using Next3.Domain.Core.Bus;
+using Next3.Domain.Core.Common;
 using Next3.Domain.Interfaces;
 using Next3.Infra.Data.Repository.EventSourcing;
 using System;
 using System.Collections.Generic;
-
+using System.Linq;
 
 namespace Next3.Application.Services
 {
@@ -29,9 +30,9 @@ namespace Next3.Application.Services
             _eventStoreRepository = eventStoreRepository;
         }
 
-        public IEnumerable<RestaurantViewModel> GetAll()
+        public IEnumerable<RestaurantViewModel> GetAll(int? pageIndex, int pageSize)
         {
-            return _restaurantRepository.GetAll().ProjectTo<RestaurantViewModel>();
+            return PaginatedList<RestaurantViewModel>.Create(_restaurantRepository.GetAll().ProjectTo<RestaurantViewModel>(), pageIndex ?? 1, pageSize); ;
         }
 
         public RestaurantViewModel GetById(Guid id)

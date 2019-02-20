@@ -25,10 +25,11 @@ namespace Next3.WebApi.Controllers
         }
 
         [HttpGet]
+        [Route("{pageIndex}/{pageSize}")]
         [AllowAnonymous]
-        public IActionResult Get()
+        public IActionResult Get(int? pageIndex, int pageSize)
         {
-            return Response(_restaurantAppService.GetAll());
+            return Response(_restaurantAppService.GetAll(pageIndex, pageSize));
         }
 
         [HttpGet]

@@ -11,7 +11,7 @@ namespace Next3.Application.Interfaces
         void Update(RestaurantViewModel restaurantViewModel);
         void Remove(Guid id);
         RestaurantViewModel GetById(Guid id);
-        IEnumerable<RestaurantViewModel> GetAll();
+        IEnumerable<RestaurantViewModel> GetAll(int? pageIndex, int pageSize);
         IList<RestaurantHistoryData> GetAllHistory(Guid id);
         IEnumerable<RestaurantViewModel> GetClosest(double latitude, double longitude, double maxDistance);
     }
