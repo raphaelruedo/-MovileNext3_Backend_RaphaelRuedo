@@ -1,15 +1,14 @@
 ﻿using System.Security.Claims;
 using System.Threading.Tasks;
-using Equinox.Infra.CrossCutting.Identity.Models.AccountViewModels;
+using Next3.Infra.CrossCutting.Identity.Models.AccountViewModels;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using MyProject.Infra.CrossCutting.Identity.Models;
-using MyProject.Infra.CrossCutting.Identity.Models.AccountViewModels;
 using Next3.Domain.Core.Bus;
 using Next3.Domain.Core.Notifications;
+using Next3.Infra.CrossCutting.Identity.Models;
 
 namespace Next3.WebApi.Controllers
 {

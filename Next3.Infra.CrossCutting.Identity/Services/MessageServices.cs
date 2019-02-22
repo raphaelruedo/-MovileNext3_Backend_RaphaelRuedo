@@ -1,5 +1,4 @@
-﻿using MyProject.Infra.CrossCutting.Identity.Services;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 
 namespace Next3.Infra.CrossCutting.Identity.Services
 {

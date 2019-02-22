@@ -1,4 +1,4 @@
-﻿using MyProject.Infra.CrossCutting.Identity.Services;
+﻿using Next3.Infra.CrossCutting.Identity.Services;
 using System.Text.Encodings.Web;
 using System.Threading.Tasks;
 

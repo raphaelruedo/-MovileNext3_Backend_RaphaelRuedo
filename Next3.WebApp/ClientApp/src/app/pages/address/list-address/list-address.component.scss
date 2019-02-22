@@ -1,0 +1,23 @@
+@import '../../../../assets/scss/variables.scss';
+label {
+    width: 100%;
+    font-size: 1rem;
+  }
+
+.card:hover {
+    cursor: pointer;
+    box-shadow:0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
+  }
+  
+  .sub-title{
+      color:$text-color;
+  }
+
+  .title{
+      color:$primary-color;
+  }
+
+.delete-button .fa{
+    font-size: 30px;
+    color:$text-color;
+  }

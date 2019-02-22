@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
-using MyProject.Infra.CrossCutting.Identity.Models;
+using Next3.Infra.CrossCutting.Identity.Models;
 using System.IO;
 
 namespace Next3.Infra.CrossCutting.Identity.Data

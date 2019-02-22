@@ -3,7 +3,7 @@ using System.Security.Claims;
 using Microsoft.AspNetCore.Http;
 using Next3.Domain.Interfaces;
 
-namespace MyProject.Infra.CrossCutting.Identity.Models
+namespace Next3.Infra.CrossCutting.Identity.Models
 {
     public class AspNetUser : IUser
     {

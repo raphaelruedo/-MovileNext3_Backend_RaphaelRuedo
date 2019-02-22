@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity;
 
-namespace MyProject.Infra.CrossCutting.Identity.Models
+namespace Next3.Infra.CrossCutting.Identity.Models
 {
     public class ApplicationUser : IdentityUser
     {

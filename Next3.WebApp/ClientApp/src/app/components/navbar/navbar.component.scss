@@ -1,0 +1,19 @@
+@import '../../../assets/scss/variables.scss';
+
+.navbar{
+    box-shadow:0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
+    background-color: #fff !important;
+    padding:1rem 1rem;
+    
+}
+
+.navbar-light .navbar-brand{
+    color: $text-color;
+}
+.navbar-light .navbar-nav .active > .nav-link{
+    color: $primary-color;
+}
+
+.nav-link .fa{
+    font-size: 25px;
+}

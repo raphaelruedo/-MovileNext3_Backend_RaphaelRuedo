@@ -1,0 +1,34 @@
+@import '../../../../assets/scss/variables.scss';
+
+.form-control-borderless {
+    border: none;
+}
+
+.form-control-borderless:hover, .form-control-borderless:active, .form-control-borderless:focus {
+    border: none;
+    outline: none;
+    box-shadow: none;
+}
+
+.search-bar .card{
+    border:0;
+}
+
+.search-bar .card .card-body, .restaurant-card .card-body{
+    padding: 0px;
+}
+
+
+.restaurant-card .card-body .fa-circle{
+    font-size: 4px;
+    color:$text-color;
+}
+
+.restaurant-card .card-body .ratting{
+    color: $warning-color;
+    font-weight: bold;
+}
+
+.restaurant-card .card-body .title{
+    color:$primary-color;
+}

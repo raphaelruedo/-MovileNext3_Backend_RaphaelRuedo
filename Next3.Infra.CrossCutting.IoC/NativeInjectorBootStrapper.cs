@@ -2,8 +2,6 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
-using MyProject.Infra.CrossCutting.Identity.Models;
-using MyProject.Infra.CrossCutting.Identity.Services;
 using Next3.Application.Interfaces;
 using Next3.Application.Services;
 using Next3.Domain.CommandHandlers;
@@ -16,6 +14,7 @@ using Next3.Domain.Events;
 using Next3.Domain.Interfaces;
 using Next3.Infra.CrossCutting.Bus;
 using Next3.Infra.CrossCutting.Identity.Authorization;
+using Next3.Infra.CrossCutting.Identity.Models;
 using Next3.Infra.CrossCutting.Identity.Services;
 using Next3.Infra.Data.Context;
 using Next3.Infra.Data.EventSourcing;

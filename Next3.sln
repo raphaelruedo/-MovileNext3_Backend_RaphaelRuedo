@@ -33,6 +33,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Next3.Infra.CrossCutting.Io
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Next3.WebApi", "Next3.WebApi\Next3.WebApi.csproj", "{411F1596-A4A9-43F9-8970-370AC733A051}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Next3.WebApp", "Next3.WebApp\Next3.WebApp.csproj", "{C9C744AD-16EB-4EA3-A0A9-ABA546469E45}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -71,6 +73,10 @@ Global
 		{411F1596-A4A9-43F9-8970-370AC733A051}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{411F1596-A4A9-43F9-8970-370AC733A051}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{411F1596-A4A9-43F9-8970-370AC733A051}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C9C744AD-16EB-4EA3-A0A9-ABA546469E45}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C9C744AD-16EB-4EA3-A0A9-ABA546469E45}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C9C744AD-16EB-4EA3-A0A9-ABA546469E45}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C9C744AD-16EB-4EA3-A0A9-ABA546469E45}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -86,6 +92,7 @@ Global
 		{511D1DFD-1DD3-43A9-A8B5-340D3BA85BAD} = {E5768E4B-D896-4566-A1EC-1486152F6AD7}
 		{4103E790-2DC2-4447-8788-8AF62E2AD66E} = {E5768E4B-D896-4566-A1EC-1486152F6AD7}
 		{411F1596-A4A9-43F9-8970-370AC733A051} = {4779D24B-00F1-4EB4-97F2-1DD452963E5D}
+		{C9C744AD-16EB-4EA3-A0A9-ABA546469E45} = {64E4868D-D10C-4A15-BE6B-A7C7F4DCAF08}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5CF2C75A-E17E-4BE4-85E6-24694210E985}
