@@ -7,7 +7,8 @@ export const environment = {
   API: {
     HOST_URI: 'https://localhost:44381',
     RESTAURANT: {
-      LIST: 'api/Restaurant/'
+      LIST: 'api/Restaurant/',
+      CLOSEST:'api/Restaurant/'
     }
   }
 };

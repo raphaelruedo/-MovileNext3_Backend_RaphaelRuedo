@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
+import {NgxMaskModule} from 'ngx-mask'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,16 +12,19 @@ import { ListRestaurantComponent } from './pages/restaurant/list-restaurant/list
 import { ListAddressComponent } from './pages/address/list-address/list-address.component';
 
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
+import { MDBBootstrapModule } from 'angular-bootstrap-md';
+import { HomeComponent } from './pages/home/home.component';
+import { GooglePlaceModule } from "ngx-google-places-autocomplete";
 
 const appRoutes: Routes = [
   { path: 'meus-enderecos', component: ListAddressComponent },
   {
     path: '',
-    redirectTo: 'meus-enderecos',
+    redirectTo: 'home',
     pathMatch: 'full'
   },
-  // { path: 'meus-enderecos/novo', component: RegisterComponent },
-  { path: 'restaurantes', component: ListRestaurantComponent }
+  { path: 'restaurantes', component: ListRestaurantComponent },
+  { path: 'home', component: HomeComponent },
 ];
 
 @NgModule({
@@ -28,7 +32,8 @@ const appRoutes: Routes = [
     AppComponent,
     NavbarComponent,
     ListRestaurantComponent,
-    ListAddressComponent
+    ListAddressComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -39,7 +44,11 @@ const appRoutes: Routes = [
     ),
     BrowserAnimationsModule,
     AngularFontAwesomeModule,
-    HttpClientModule
+    HttpClientModule,
+    MDBBootstrapModule.forRoot(),
+    NgxMaskModule.forRoot(),
+    GooglePlaceModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

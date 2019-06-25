@@ -65,7 +65,16 @@ namespace Next3.Application.Services
 
         public IEnumerable<RestaurantViewModel> GetClosest(double latitude, double longitude, double maxDistance)
         {
-            return _restaurantRepository.GetClosest(latitude, longitude, maxDistance).ProjectTo<RestaurantViewModel>();
+            var closestRestaurants = (from restaurant in _restaurantRepository.GetAll()
+                                      let distance = (6371 * Math.Acos(Math.Cos(latitude * Math.PI / 180) * Math.Cos(restaurant.Address.Latitude * Math.PI / 180)
+                                       * Math.Cos((restaurant.Address.Longitude * Math.PI / 180) - (longitude * Math.PI / 180)) + Math.Sin(latitude * Math.PI / 180) *
+                                       Math.Sin(restaurant.Address.Latitude * Math.PI / 180)))
+                                      where distance < maxDistance
+                                      orderby distance
+                                      select restaurant
+                                          );
+
+            return closestRestaurants.ProjectTo<RestaurantViewModel>();
         }
 
         public void Dispose()

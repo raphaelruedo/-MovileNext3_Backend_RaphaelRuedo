@@ -21,7 +21,16 @@ export class RestaurantService {
     const restaurants = new Array<Restaurant>();
     for (const restaraunt in result)
       restaurants.push(new Restaurant(result[restaraunt]));
+  
+    return restaurants;
+  }
 
+  async getClosest(latitude:number, longitude: number, maxDistance:number){
+    const result = await this.api.get(environment.API.RESTAURANT.CLOSEST + latitude + '/' + longitude + '/' + maxDistance, null, { headers: this.headers });
+    const restaurants = new Array<Restaurant>();
+    for (const restaraunt in result)
+      restaurants.push(new Restaurant(result[restaraunt]));
+  
     return restaurants;
   }
 

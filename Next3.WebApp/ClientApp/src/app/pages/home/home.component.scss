@@ -1,0 +1,56 @@
+@import '../../../assets/scss/variables.scss';
+
+html,
+body,
+header,
+.view {
+  min-height: 100vh;
+}
+
+@media (max-width: 740px) {
+  html,
+  body,
+  header,
+  .view {
+    height: 100vh;
+  }
+}
+
+
+.search-box input{
+  border:none;
+}
+
+.search-box .form-control:focus{
+  box-shadow: none;
+}
+
+.search-box .input-group{
+  background-color: #ffffff;
+  padding-right: 10px; 
+  padding-top: 5px;
+}
+
+.search-box .input-group-addon{
+      margin-right: 10px;
+      margin-top: 5px;
+      font-size: 25px;
+      color: $text-color;
+}
+
+.search-box .fa-search:hover:before{
+  content: '\f061';
+  cursor: pointer;
+}
+
+.step-box{
+  color: #fff;
+}
+
+.step-box p{
+  font-size: 13px;
+}
+
+.description{
+  color:$text-color;
+}
